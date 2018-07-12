@@ -51,7 +51,7 @@ print("Произвольный список: ", list)
 for i in list:
     if i % 2 == 0:
         a = i / 4
-    elif i % 2 != 0:
+    else:
         a = i * 2
     new_list.append(a)
     i += 1
