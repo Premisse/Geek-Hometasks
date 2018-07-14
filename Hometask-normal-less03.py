@@ -22,6 +22,7 @@ book = dict(zip(names, salary))
 
 os.chdir(r'D:\geekbrains\lessons')
 
-with open('salary.txt', 'w') as file:
+with open('salary.txt', 'w+', encoding='utf-8') as file:
     for key, value in book.items():
         file.write('{} - {}\n'.format(key, value))
+
