@@ -15,14 +15,23 @@
 
 import os
 
+os.chdir(r'D:\geekbrains\lessons')
+
 names = ['Буратино', 'Мальвина', 'Пьеро', 'Артемон', 'Тортилла', 'Карабас', 'Базилио', 'Алиса']
 salary = [1000, 3000, 500, 5000, 10000, 100000, 300, 2000]
 
 book = dict(zip(names, salary))
 
-os.chdir(r'D:\geekbrains\lessons')
-
-with open('salary.txt', 'w+', encoding='utf-8') as file:
+with open('salary.txt', 'w', encoding='utf-8') as file:
     for key, value in book.items():
         file.write('{} - {}\n'.format(key, value))
 
+with open('salary.txt', 'r', encoding='utf-8') as file:
+    for line in file:
+        result = line.strip().split(' - ')
+        if int(result[1]) < 50000:
+            result[1] = float(result[1])
+            result[1] = result[1] - (result[1] / 100 * 13)
+            print(result[0].upper(), ' - ', result[1])
+        else:
+            continue
