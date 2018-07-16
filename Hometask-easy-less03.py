@@ -9,13 +9,14 @@
 
 def ident_info (name, age, city):
     info = '{} {} год(а), проживает в городе {}'.format(name, age, city)
-    print(info)
+    return info
 
 name = input("Введите имя: ")
 age = input("Введите возраст: ")
 city = input("Введите город: ")
 
-ident_info(name, age, city)
+result = ident_info(name, age, city)
+print(result)
 
 # Задание - 2
 # Создайте функцию, принимающую на вход 3 числа, и возвращающую наибольшее из них
